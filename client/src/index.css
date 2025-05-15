@@ -1,0 +1,49 @@
+/* :root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+} */
+.navbar {
+  @apply bg-white shadow px-6 py-4 flex justify-between items-center;
+}
+.navbar-logo {
+  @apply text-2xl font-bold text-indigo-600;
+}
+.nav-menu li {
+  @apply inline-block ml-4 text-gray-700 hover:text-indigo-600;
+}
+.btn-logout {
+  @apply ml-4 text-red-500 hover:underline;
+}
+.footer {
+  @apply bg-gray-100 text-center py-4 mt-10 text-sm text-gray-600;
+}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Light mode styles */
+body {
+  background-color: #f2eae2;
+  color: black;
+}
+/* Dark mode styles */
+.dark body {
+  background-color: #1a202c; /* Dark background */
+  color: #cbd5e0; /* Light text color */
+}
+.dark .bg-white {
+  background-color: #161c24; /* Darker background for elements */
+}
+.dark .text-gray-700 {
+  color: #e7e5dc; /* Lighter text color */
+}
