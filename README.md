@@ -18,12 +18,6 @@ A full-stack Finance Tracker application built with the **MERN stack** (MongoDB,
 | React.js  | Node.js   | MongoDB  | Express.js, TailwindCSS |
 | Context API / Redux | JWT Auth | Mongoose | React Router, dotenv |
 
-## 🖼️ Screenshots
-
-<!-- Add your actual screenshots here -->
-![Dashboard Screenshot](link-to-screenshot)
-![Add Transaction](link-to-screenshot)
-
 ## 🚀 Getting Started
 
 ### Prerequisites
