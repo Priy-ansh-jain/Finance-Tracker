@@ -36,7 +36,13 @@ export const TransactionProvider = ({ children }) => {
     setError(null);
 
     try {
-      const res = await axios.post(API_URL, transactionData);
+      // Ensure note field is included even if empty
+      const dataToSend = {
+        ...transactionData,
+        note: transactionData.note || ""
+      };
+
+      const res = await axios.post(API_URL, dataToSend);
       setTransactions(prev => [res.data, ...prev]);
       return res.data;
     } catch (err) {
@@ -104,15 +110,15 @@ export const TransactionProvider = ({ children }) => {
     }
 
     // Convert to CSV format
-    const headers = "Date,Type,Category,Description,Amount\n";
+    const headers = "Date,Type,Category,Note,Amount\n";
     const csvData = filteredTransactions.map(transaction => {
       const date = new Date(transaction.date).toLocaleDateString();
       const type = transaction.type;
       const category = transaction.category;
-      const description = transaction.description || "";
+      const note = transaction.note || "";
       const amount = transaction.amount;
 
-      return `${date},${type},${category},"${description}",${amount}`;
+      return `${date},${type},${category},"${note}",${amount}`;
     }).join("\n");
 
     const csvContent = headers + csvData;
@@ -154,6 +160,5 @@ export const TransactionProvider = ({ children }) => {
     </TransactionContext.Provider>
   );
 };
-
 export default TransactionContext;
 

@@ -1,4 +1,3 @@
-// src/pages/Transactions/TransactionsPage.jsx
 import React, { useContext, useState } from "react";
 import TransactionContext from "../context/TransactionContext";
 
@@ -20,7 +19,17 @@ const TransactionsPage = () => {
     e.preventDefault();
     const amt = parseFloat(form.amount);
     if (!amt || !form.category || !form.type) return alert("Fill required fields");
-    addTransaction({ ...form, amount: amt });
+
+    // Create transaction with proper formatting
+    const transaction = {
+      amount: amt,
+      category: form.category,
+      type: form.type,
+      date: form.date || new Date().toISOString().split('T')[0],
+      note: form.note || ""
+    };
+
+    addTransaction(transaction);
     setForm({ amount: "", category: "", type: "expense", date: "", note: "" });
   };
 
@@ -89,7 +98,7 @@ const TransactionsPage = () => {
             <div>
               <h3 className="font-semibold text-lg">{t.category}</h3>
               <p className="text-sm text-gray-600">
-                {new Date(t.date).toLocaleDateString()} | {t.note || "No note"}
+                {t.date ? new Date(t.date).toLocaleDateString() : 'No date'} | {t.note || "No note"}
               </p>
             </div>
             <div className="text-right">
@@ -111,4 +120,3 @@ const TransactionsPage = () => {
 };
 
 export default TransactionsPage;
-
