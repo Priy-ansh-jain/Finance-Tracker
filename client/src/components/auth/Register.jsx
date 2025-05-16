@@ -47,22 +47,20 @@ const Register = () => {
   };
 
   return (
-    <div className="flex w-full h-screen">
-      {/* Left Side - Registration Form */}
-      <div className="w-1/2 bg-white p-10 flex flex-col justify-center">
-
-
-        <div className="mb-8">
-          <h2 className="text-2xl font-bold">Create an Account</h2>
-          <p className="text-gray-500">Join FinanceTracker. Please enter your details</p>
+    <div className="flex flex-col lg:flex-row w-full min-h-screen">
+      {/* Registration Form - Full width on small/medium, half width on large */}
+      <div className="w-full lg:w-1/2 bg-white p-4 md:px-12 sm:p-8 lg:p-10 px-10 flex flex-col justify-center">
+        <div className="mb-6 sm:mb-8">
+          <h2 className="text-xl sm:text-2xl font-bold">Create an Account</h2>
+          <p className="text-gray-500 text-sm sm:text-base">Join FinanceTracker. Please enter your details</p>
         </div>
 
-        {error && <p className="text-red-500 mb-4 p-3 bg-red-50 rounded-lg">{error}</p>}
+        {error && <p className="text-red-500 mb-4 p-3 bg-red-50 rounded-lg text-sm sm:text-base">{error}</p>}
 
-        <form onSubmit={handleSubmit} className="space-y-4">
+        <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-4">
           <div className="relative">
-            <div className="flex items-center border rounded-lg p-3 focus-within:border-blue-500">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-gray-400 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <div className="flex items-center border rounded-lg p-2 sm:p-3 focus-within:border-blue-500">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 sm:h-5 sm:w-5 text-gray-400 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
               </svg>
               <input
@@ -71,15 +69,15 @@ const Register = () => {
                 placeholder="Full Name"
                 value={formData.name}
                 onChange={handleChange}
-                className="outline-none w-full"
+                className="outline-none w-full text-sm sm:text-base h-8 rounded-md px-2 text-black"
                 required
               />
             </div>
           </div>
 
           <div className="relative">
-            <div className="flex items-center border rounded-lg p-3 focus-within:border-blue-500">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-gray-400 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <div className="flex items-center border rounded-lg p-2 sm:p-3 focus-within:border-blue-500">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 sm:h-5 sm:w-5 text-gray-400 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
               </svg>
               <input
@@ -88,15 +86,15 @@ const Register = () => {
                 placeholder="Email Address"
                 value={formData.email}
                 onChange={handleChange}
-                className="outline-none w-full"
+                className="outline-none w-full text-sm sm:text-base h-8 rounded-md px-2 text-black"
                 required
               />
             </div>
           </div>
 
           <div className="relative">
-            <div className="flex items-center border rounded-lg p-3 focus-within:border-blue-500">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-gray-400 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <div className="flex items-center border rounded-lg p-2 sm:p-3 focus-within:border-blue-500">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 sm:h-5 sm:w-5 text-gray-400 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
               </svg>
               <input
@@ -105,7 +103,7 @@ const Register = () => {
                 placeholder="Password"
                 value={formData.password}
                 onChange={handleChange}
-                className="outline-none w-full"
+                className="outline-none w-full text-sm sm:text-base h-8 rounded-md px-2 text-black"
                 required
                 minLength="6"
               />
@@ -113,8 +111,8 @@ const Register = () => {
           </div>
 
           <div className="relative">
-            <div className="flex items-center border rounded-lg p-3 focus-within:border-blue-500">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-gray-400 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <div className="flex items-center border rounded-lg p-2 sm:p-3 focus-within:border-blue-500">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 sm:h-5 sm:w-5 text-gray-400 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
               </svg>
               <input
@@ -123,7 +121,7 @@ const Register = () => {
                 placeholder="Confirm Password"
                 value={formData.confirmPassword}
                 onChange={handleChange}
-                className="outline-none w-full"
+                className="outline-none w-full text-sm sm:text-base h-8 rounded-md px-2 text-black"
                 required
                 minLength="6"
               />
@@ -133,21 +131,20 @@ const Register = () => {
           <button
             type="submit"
             disabled={loading}
-            className="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition-colors disabled:opacity-70"
+            className="w-full bg-blue-600 text-white py-2 sm:py-3 rounded-lg hover:bg-blue-700 transition-colors disabled:opacity-70 text-sm sm:text-base"
           >
             {loading ? "Creating Account..." : "Register"}
           </button>
         </form>
 
-        <div className="my-6 flex items-center">
+        <div className="my-4 sm:my-6 flex items-center">
           <div className="flex-grow border-t border-gray-300"></div>
-          <span className="mx-4 text-gray-500 text-sm">+</span>
+          <span className="mx-4 text-gray-500 text-xs sm:text-sm">+</span>
           <div className="flex-grow border-t border-gray-300"></div>
         </div>
 
-
-        <div className="mt-6 text-center">
-          <p className="text-gray-600">
+        <div className="mt-4 sm:mt-6 text-center">
+          <p className="text-gray-600 text-sm sm:text-base">
             Already have an account?
             <Link to="/login" className="text-blue-600 ml-2 cursor-pointer hover:underline">
               Login
@@ -155,8 +152,8 @@ const Register = () => {
           </p>
         </div>
 
-        <div className="mt-8">
-          <p className="text-sm text-gray-600 text-center">
+        <div className="mt-4 sm:mt-8">
+          <p className="text-xs sm:text-sm text-gray-600 text-center">
             Join the millions of smart investors who trust us to manage their finances. Create an account
             to access your personalized dashboard, track your portfolio performance, and
             make informed investment decisions.
@@ -164,8 +161,8 @@ const Register = () => {
         </div>
       </div>
 
-      {/* Right Side - Image */}
-      <div className="w-1/2 bg-blue-50 flex items-center justify-center">
+      {/* Right Side - Image (Only visible on large screens) */}
+      <div className="hidden lg:flex w-full lg:w-1/2 bg-blue-50 items-center justify-center p-6">
         <div className="relative w-64 h-64">
           <div className="absolute w-full h-full bg-blue-400 rounded-lg shadow-xl transform rotate-3"></div>
           <div className="absolute w-full h-full bg-blue-500 rounded-lg shadow-xl">

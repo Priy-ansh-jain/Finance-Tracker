@@ -68,12 +68,12 @@ const Navbar = () => {
         {isAuthenticated && user && (
           <div className={`px-4 py-4 border-b border-gray-200 dark:border-gray-700 transition-all duration-300 overflow-hidden ${sidebarExpanded ? 'opacity-100' : 'opacity-0 md:group-hover:opacity-100'}`}>
             <div className="flex items-center">
-              <div className="h-9 w-9 rounded-full bg-purple-200 dark:bg-purple-700 flex items-center justify-center flex-shrink-0">
+              <div className="h-9 w-9 rounded-full bg-purple-200 dark:bg-purple-700 flex items-center justify-center flex-shrink-0 dark:text-white">
                 {user.name.charAt(0).toUpperCase()}
               </div>
               <div className="ml-3">
                 <p className="text-sm font-medium text-gray-700 dark:text-gray-300">Welcome,</p>
-                <p className="text-sm font-bold text-gray-900 dark:text-white truncate max-w-[140px]">{user.name}</p>
+                <p className="text-sm font-bold text-gray-900 dark:text-white truncate max-w-[140px] ">{user.name}</p>
               </div>
             </div>
           </div>

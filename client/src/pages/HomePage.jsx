@@ -7,7 +7,7 @@ const HomePage = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-purple-900 via-indigo-900 to-black text-gray-200 m-auto ">
       {/* Navbar */}
-      <nav className="max-w-7xl mx-auto flex justify-between items-center py-6 px-6 md:px-12">
+      <nav className="max-w-7xl mx-auto flex justify-between items-center py-6 px-6 ">
         {/* <div className="text-2xl font-extrabold tracking-wide text-indigo-400 cursor-pointer select-none">
           FinanceTracker
         </div> */}

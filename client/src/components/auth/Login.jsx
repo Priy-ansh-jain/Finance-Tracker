@@ -42,27 +42,25 @@ const LoginPage = () => {
   };
 
   return (
-    <div className="flex w-full h-screen">
+    <div className="flex flex-col md:flex-row w-full min-h-screen">
       {/* Left panel */}
-      <div className="w-2/5 bg-white p-12 flex flex-col">
-
-
+      <div className="w-full lg:w-1/2 bg-white p-4 md:px-12 lg:p-10 px-16 flex flex-col justify-center">
         <div className="flex-grow">
-          <h1 className="text-2xl font-bold mb-1">Welcome Back</h1>
-          <p className="text-gray-500 text-sm mb-6">Welcome Back. Please enter Your details</p>
+          <h1 className="text-xl sm:text-2xl font-bold mb-1">Welcome Back</h1>
+          <p className="text-gray-500 text-xs sm:text-sm mb-4 sm:mb-6">Welcome Back. Please enter Your details</p>
 
-          {error && <p className="text-red-500 mb-4 text-sm">{error}</p>}
+          {error && <p className="text-red-500 mb-4 text-xs sm:text-sm">{error}</p>}
 
-          <div className="flex border-b mb-6">
+          <div className="flex border-b mb-4 sm:mb-6">
             <button
-              className={`pb-2 px-4 text-sm font-medium ${activeTab === "signin" ? "border-b-2 border-blue-600 text-blue-600" : "text-gray-500"
+              className={`pb-2 px-2 sm:px-4 text-xs sm:text-sm font-medium ${activeTab === "signin" ? "border-b-2 border-blue-600 text-blue-600" : "text-gray-500"
                 }`}
               onClick={() => setActiveTab("signin")}
             >
               Sign In
             </button>
             <button
-              className={`pb-2 px-4 text-sm font-medium ${activeTab === "signup" ? "border-b-2 border-blue-600 text-blue-600" : "text-gray-500"
+              className={`pb-2 px-2 sm:px-4 text-xs sm:text-sm font-medium ${activeTab === "signup" ? "border-b-2 border-blue-600 text-blue-600" : "text-gray-500"
                 }`}
               onClick={handleSignUpClick}
             >
@@ -74,19 +72,19 @@ const LoginPage = () => {
             <div className="mb-4">
               <div className="relative">
                 <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-                  <Mail size={18} className="text-gray-400" />
+                  <Mail size={16} className="text-gray-400" />
                 </div>
                 <input
                   type="email"
                   placeholder="Email Address"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="w-full pl-10 pr-10 py-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-500"
+                  className="w-full pl-10 pr-10 py-2 text-sm border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-500"
                   required
                 />
                 {email && email.includes("@") && (
                   <div className="absolute inset-y-0 right-0 flex items-center pr-3">
-                    <CheckCircle size={18} className="text-green-500" />
+                    <CheckCircle size={16} className="text-green-500" />
                   </div>
                 )}
               </div>
@@ -100,20 +98,20 @@ const LoginPage = () => {
                     placeholder="Password"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
-                    className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-500"
+                    className="w-full px-3 py-2 text-sm border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-500"
                     required
                   />
                 </div>
 
                 <div className="flex justify-end mb-4">
-                  <button type="button" className="text-sm text-blue-600 hover:underline">
+                  <button type="button" className="text-xs sm:text-sm text-blue-600 hover:underline">
                     Forgot Password?
                   </button>
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition duration-200"
+                  className="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition duration-200 text-sm"
                 >
                   Sign In
                 </button>
@@ -124,7 +122,7 @@ const LoginPage = () => {
               <button
                 type="button"
                 onClick={handleContinue}
-                className="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition duration-200 mt-4"
+                className="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition duration-200 mt-4 text-sm"
               >
                 Continue
               </button>
@@ -136,13 +134,13 @@ const LoginPage = () => {
               <div className="w-full border-t border-gray-300"></div>
             </div>
             <div className="relative">
-              <span className="bg-white px-4 text-sm text-gray-500">Or Continue With</span>
+              <span className="bg-white px-4 text-xs sm:text-sm text-gray-500">Or Continue With</span>
             </div>
           </div>
 
           <div className="mt-6 flex justify-center space-x-4">
-            <button className="flex items-center justify-center w-12 h-12 rounded-full border border-gray-300 hover:bg-gray-50">
-              <svg viewBox="0 0 24 24" className="h-5 w-5">
+            <button className="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-gray-300 hover:bg-gray-50">
+              <svg viewBox="0 0 24 24" className="h-4 w-4 sm:h-5 sm:w-5">
                 <path
                   fill="#EA4335"
                   d="M12 5c1.617 0 3.071.664 4.123 1.745l3.249-3.172A11.016 11.016 0 0012 0C7.392 0 3.397 2.6 1.386 6.41l3.901 3.02C6.149 6.523 8.878 5 12 5z"
@@ -162,26 +160,26 @@ const LoginPage = () => {
                 <path fill="none" d="M0 0h24v24H0z" />
               </svg>
             </button>
-            <button className="flex items-center justify-center w-12 h-12 rounded-full border border-gray-300 hover:bg-gray-50">
-              <svg viewBox="0 0 24 24" className="h-5 w-5 fill-current text-black">
+            <button className="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-gray-300 hover:bg-gray-50">
+              <svg viewBox="0 0 24 24" className="h-4 w-4 sm:h-5 sm:w-5 fill-current text-black">
                 <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.68 1.32-1.53 2.6-2.53 4.08zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.32 2.32-1.66 4.22-3.74 4.25z" />
               </svg>
             </button>
-            <button className="flex items-center justify-center w-12 h-12 rounded-full border border-gray-300 hover:bg-gray-50">
-              <svg viewBox="0 0 24 24" className="h-5 w-5 fill-current text-blue-600">
+            <button className="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-gray-300 hover:bg-gray-50">
+              <svg viewBox="0 0 24 24" className="h-4 w-4 sm:h-5 sm:w-5 fill-current text-blue-600">
                 <path d="M12 2.04c-5.5 0-10 4.49-10 10.02 0 5 3.66 9.15 8.44 9.9v-7H7.9v-2.9h2.54V9.85c0-2.51 1.49-3.89 3.78-3.89 1.09 0 2.23.19 2.23.19v2.47h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.45 2.9h-2.33v7a10 10 0 0 0 8.44-9.9c0-5.53-4.5-10.02-10-10.02z" />
               </svg>
             </button>
           </div>
         </div>
 
-        <div className="mt-8 text-center text-sm text-gray-500">
+        <div className="mt-6 text-center text-xs sm:text-sm text-gray-500 px-2">
           <p>Join the millions of smart investors who trust us to manage their finances. Log in to access your personalized dashboard, track your portfolio performance, and make informed investment decisions.</p>
         </div>
       </div>
 
-      {/* Right panel - Blue safe image */}
-      <div className="w-3/5 bg-blue-50 flex items-center justify-center">
+      {/* Right panel - Blue safe image - Only visible on large screens */}
+      <div className="hidden lg:flex w-full lg:w-3/5 bg-blue-50 items-center justify-center order-1 md:order-2">
         <div className="relative w-64 h-64">
           {/* Blue Safe SVG */}
           <svg viewBox="0 0 200 200" className="w-full h-full">
