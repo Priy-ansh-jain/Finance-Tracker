@@ -57,7 +57,7 @@ const HomePage = () => {
             interactive graphs, and get smart budget suggestions. Take control
             of your money and achieve your financial goals effortlessly.
           </p>
-          <div className="space-x-4">
+          <div className="space-x-4 gap-1 items-center">
             <Link
               to="/register"
               className="inline-block px-8 py-3 bg-indigo-500 rounded-full font-semibold text-white hover:bg-indigo-700 transition"

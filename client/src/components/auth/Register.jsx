@@ -49,7 +49,7 @@ const Register = () => {
   return (
     <div className="flex flex-col lg:flex-row w-full min-h-screen">
       {/* Registration Form - Full width on small/medium, half width on large */}
-      <div className="w-full lg:w-1/2 bg-white p-4 md:px-12 sm:p-8 lg:p-10 px-10 flex flex-col justify-center">
+      <div className="w-full lg:w-1/2 bg-white p-4  lg:p-10  flex flex-col justify-center">
         <div className="mb-6 sm:mb-8">
           <h2 className="text-xl sm:text-2xl font-bold">Create an Account</h2>
           <p className="text-gray-500 text-sm sm:text-base">Join FinanceTracker. Please enter your details</p>

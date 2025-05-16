@@ -44,7 +44,7 @@ const LoginPage = () => {
   return (
     <div className="flex flex-col md:flex-row w-full min-h-screen">
       {/* Left panel */}
-      <div className="w-full lg:w-1/2 bg-white p-4 md:px-12 lg:p-10 px-16 flex flex-col justify-center">
+      <div className="w-full lg:w-1/2 bg-white p-4 lg:p-10 flex flex-col justify-center">
         <div className="flex-grow">
           <h1 className="text-xl sm:text-2xl font-bold mb-1">Welcome Back</h1>
           <p className="text-gray-500 text-xs sm:text-sm mb-4 sm:mb-6">Welcome Back. Please enter Your details</p>
